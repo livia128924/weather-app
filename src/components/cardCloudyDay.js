@@ -17,7 +17,7 @@ export default function CardCloudy() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
 
     fetch("http://api.airvisual.com/v2/nearest_city?key=17285dc4-8d4e-48b1-9f26-faf1866cae0f")
       .then(res => res.json())
@@ -25,16 +25,12 @@ export default function CardCloudy() {
         (result) => {
           setIsLoaded(true);
           setItems(result.data)
-        alert(result.data.city);
+        //alert(result.data.city);
         },
     
       )
   }, [])
 
-
-  const jsx = `
-  <Grid container spacing={${spacing}}>
-  `;
 
   return (
     <Card
@@ -46,7 +42,7 @@ export default function CardCloudy() {
     >
       <Grid container style={{ margin: 20 }}>
         <div style={{ marginRight: 15 }}>
-          <a style={{ fontSize: 40 }}>{items.current.weather.tp}°C</a>
+          <a style={{ fontSize: 40 }}>27°C</a>
         </div>
         <Divider
           orientation="vertical"

@@ -8,6 +8,7 @@ import Ranning from "../images/Group.png";
 import cloudMIni from "../images/Cloud-mini.png";
 import cloudSunMini from "../images/cloudSun-mini.png";
 import sunMini from "../images/Sun-mini.png";
+import {getCurrentDate} from "./getCurrentDate"
 
 export default function CardRanning() {
   const [spacing, setSpacing] = React.useState(2);
@@ -62,7 +63,7 @@ export default function CardRanning() {
             color: "#7DA6BB",
           }}
         >
-          Mon 21 Jan 2021
+           {getCurrentDate()}
         </a>
       </div>
       <div style={{justifyContent:'space-around', display:'flex'}}>
